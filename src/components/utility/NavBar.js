@@ -25,7 +25,7 @@ const NavBar = ({ history, toggleBurger, showBurger }) => {
           <span></span>
         </div>
       </div>
-      <div className="navbar-menu" id="nav-menu">
+      <div className={`${(showBurger ? 'is-active' : '')} navbar-menu`} onClick={toggleBurger} id="nav-menu">
         <div className="navbar-end">
           <div className="navbar-item">
             { type === 'User' && <a href="#" className="" onClick={logout}>Logout</a> }

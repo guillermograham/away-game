@@ -10,12 +10,23 @@ import './scss/style.scss';
 
 class App extends React.Component {
 
+  state = {
+    showBurger: false
+  }
+
+  toggleBurger = () => {
+    return this.setState({ showBurger: !this.state.showBurger });
+  }
+
   render() {
     return (
       <Router>
         <div>
           <header>
-            <Navbar />
+            <Navbar
+              toggleBurger={this.toggleBurger}
+              showBurger={this.state.showBurger}
+            />
           </header>
           <main>
             <div className="container">
