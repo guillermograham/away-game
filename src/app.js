@@ -1,10 +1,11 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar      from './components/utility/Navbar';
+import UserLogin       from './components/auth/UserLogin';
+import UserRegister    from './components/auth/UserRegister';
 
-import 'bootstrap-css-only';
 import './scss/style.scss';
 
 class App extends React.Component {
@@ -12,14 +13,19 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <div className="container">
-            
-          </div>
-        </main>
+        <div>
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            <div className="container">
+              <Switch>
+                <Route path="/login" component={UserLogin} />
+                <Route path="/register" component={UserRegister} />
+              </Switch>
+            </div>
+          </main>
+        </div>
       </Router>
     );
   }

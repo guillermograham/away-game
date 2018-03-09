@@ -4,6 +4,9 @@ const jwt = require('jsonwebtoken');
 const { secret } = require('../config/environment');
 
 function userRegister(req, res, next) {
+
+  req.body.type = 'User';
+
   User
     .create(req.body)
     .then(() => res.json({ message: 'Registration successful'}))
@@ -16,7 +19,7 @@ function userLogin(req, res, next) {
     .then((user) => {
       if(!user || !user.validatePassword(req.body.password)) return res.unauthorized();
 
-      const token = jwt.sign({ userId: user.id }, secret, { expiresIn: '1hr' });
+      const token = jwt.sign({ userId: user.id, type: user.type }, secret, { expiresIn: '1hr' });
       return res.json({ token, message: `Welcome back ${user.username}` });
     })
     .catch(next);

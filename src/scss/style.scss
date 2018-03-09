@@ -1,0 +1,26 @@
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+
+
+// $link: purple;
+$primary: #FF88DC;
+$primary-invert: #fff;
+$link: #8884FF;
+$success: #A0E8AF;
+$danger: #FF5151;
+$background: white;
+$family-primary: 'Karla', sans-serif;
+
+// 5. Add new color variables to the color map.
+// @import "bulma/utilities/derived-variables.sass";
+// $addColors: (
+//   "twitter":($twitter, $twitter-invert),
+//   "linkedin": ($linkedin, $linkedin-invert),
+//   "github": ($github, $github-invert)
+// );
+// $colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Bulma
+@import "bulma/bulma";
