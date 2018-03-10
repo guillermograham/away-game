@@ -1,13 +1,15 @@
 /* global google */
 
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 // import mapStyles from '../config/mapStyles';
 
 class GoogleMap extends React.Component {
 
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: { lat: 41.390205, lng: 2.154007 },
+      center: this.props.center || { lat: 41.390205, lng: 2.154007 },
       zoom: 15,
       clickableIcons: false,
       disableDefaultUI: true
@@ -18,7 +20,7 @@ class GoogleMap extends React.Component {
 
     if(this.props.bars){
       this.props.bars.forEach((bar) => {
-
+        console.log('bar :', bar);
         // console.log('in here', bar.address);
         const marker = new google.maps.Marker({
           map: this.map,
@@ -36,13 +38,30 @@ class GoogleMap extends React.Component {
         });
 
 
-        marker.id = bar.id;
+        marker.id = bar._id;
 
         google.maps.event.addListener(marker, 'click', () => {
           this.props.history.push(`/bars/${marker.id}`);
         });
       });
     }
+
+    if(this.props.center) {
+      this.map = new google.maps.Map(this.mapCanvas, {
+        center: this.props.center || { lat: 51.51, lng: -0.09 },
+        zoom: 18,
+        clickableIcons: false,
+        disableDefaultUI: true
+        // styles: mapStyles
+      });
+
+      this.marker = new google.maps.Marker({
+        map: this.map,
+        position: this.props.center || { lat: 51.51, lng: -0.09 },
+        animation: google.maps.Animation.DROP
+      });
+    }
+
 
     // this.markers = this.props.markers.map(bar => {
     //
@@ -69,8 +88,8 @@ class GoogleMap extends React.Component {
   }
 
   componentWillUnmount() {
-    this.markers.setMap(null);
-    this.markers = null;
+    // this.marker.setMap(null);
+    this.marker = null;
     this.map = null;
   }
 
@@ -81,4 +100,4 @@ class GoogleMap extends React.Component {
   }
 }
 
-export default GoogleMap;
+export default withRouter(GoogleMap);

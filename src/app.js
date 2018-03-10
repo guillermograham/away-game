@@ -6,6 +6,7 @@ import Navbar      from './components/utility/Navbar';
 import UserLogin       from './components/auth/UserLogin';
 import UserRegister    from './components/auth/UserRegister';
 import BarsIndex from './components/bars/BarsIndex';
+import BarsShow from './components/bars/BarsShow';
 
 import './scss/style.scss';
 
@@ -32,7 +33,8 @@ class App extends React.Component {
           <main>
             <div className="container">
               <Switch>
-                <Route path="/bars" component={BarsIndex} />
+                <Route exact path="/bars" component={BarsIndex} />
+                <Route path="/bars/:id" component={BarsShow} />
                 <Route path="/login" component={UserLogin} />
                 <Route path="/register" component={UserRegister} />
               </Switch>
