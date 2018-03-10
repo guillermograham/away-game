@@ -23,7 +23,7 @@ class BarsIndex extends React.Component {
   render() {
     return (
       <div>
-        { this.state.bars && <GoogleMap /> }
+        { this.state.bars.length > 0 && <GoogleMap markers={this.state.bars} /> }
         <div className="row">
           <div className="page-banner col-md-12">
             { Auth.isAuthenticated() && <Link to="/bars/new" className="main-button">

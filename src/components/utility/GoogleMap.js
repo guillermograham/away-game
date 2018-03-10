@@ -7,23 +7,32 @@ class GoogleMap extends React.Component {
 
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: { lat: 51.51, lng: -0.09 },
-      zoom: 18,
+      center: { lat: 41.390205, lng: 2.154007 },
+      zoom: 15,
       clickableIcons: false,
       disableDefaultUI: true
       // styles: mapStyles
     });
 
-    this.marker = new google.maps.Marker({
-      map: this.map,
-      position: { lat: 51.51, lng: -0.09 },
-      animation: google.maps.Animation.DROP
+    console.log('before map: ', this.props.markers);
+
+    this.markers = this.props.markers.map(bar => {
+
+      console.log('markers: ', bar);
+
+      new google.maps.Marker({
+        map: this.map,
+        position: bar.location,
+        animation: google.maps.Animation.DROP
+      });
+
     });
+
   }
 
   componentWillUnmount() {
-    this.marker.setMap(null);
-    this.marker = null;
+    this.markers.setMap(null);
+    this.markers = null;
     this.map = null;
   }
 
