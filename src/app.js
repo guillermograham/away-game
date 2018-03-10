@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar      from './components/utility/Navbar';
 import UserLogin       from './components/auth/UserLogin';
 import UserRegister    from './components/auth/UserRegister';
+import BarsIndex from './components/bars/BarsIndex';
 
 import './scss/style.scss';
 
@@ -31,6 +32,7 @@ class App extends React.Component {
           <main>
             <div className="container">
               <Switch>
+                <Route path="/bars" component={BarsIndex} />
                 <Route path="/login" component={UserLogin} />
                 <Route path="/register" component={UserRegister} />
               </Switch>
