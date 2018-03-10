@@ -7,7 +7,7 @@ class GoogleMap extends React.Component {
 
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: this.props.center || { lat: 51.51, lng: -0.09 },
+      center: { lat: 51.51, lng: -0.09 },
       zoom: 18,
       clickableIcons: false,
       disableDefaultUI: true
@@ -16,7 +16,7 @@ class GoogleMap extends React.Component {
 
     this.marker = new google.maps.Marker({
       map: this.map,
-      position: this.props.center || { lat: 51.51, lng: -0.09 },
+      position: { lat: 51.51, lng: -0.09 },
       animation: google.maps.Animation.DROP
     });
   }

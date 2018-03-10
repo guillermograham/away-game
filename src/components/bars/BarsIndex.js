@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
+import GoogleMap from '../utility/GoogleMap';
 
 class BarsIndex extends React.Component {
   state = {
@@ -22,6 +23,7 @@ class BarsIndex extends React.Component {
   render() {
     return (
       <div>
+        { this.state.bars && <GoogleMap /> }
         <div className="row">
           <div className="page-banner col-md-12">
             { Auth.isAuthenticated() && <Link to="/bars/new" className="main-button">

@@ -24,3 +24,7 @@ $family-primary: 'Karla', sans-serif;
 
 // 6. Import the rest of Bulma
 @import "bulma/bulma";
+
+.google-map {
+  height: 200px;
+}
