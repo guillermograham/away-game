@@ -14,19 +14,57 @@ class GoogleMap extends React.Component {
       // styles: mapStyles
     });
 
-    console.log('before map: ', this.props.markers);
+    console.log('before map: ', this.props.bars);
 
-    this.markers = this.props.markers.map(bar => {
+    if(this.props.bars){
+      this.props.bars.forEach((bar) => {
 
-      console.log('markers: ', bar);
+        // console.log('in here', bar.address);
+        const marker = new google.maps.Marker({
+          map: this.map,
+          position: bar.location,
+          animation: google.maps.Animation.DROP
+        });
+        var infowindow =  new google.maps.InfoWindow({
+          content: bar.name
+        });
+        marker.addListener('mouseover', function() {
+          infowindow.open(this.map, this);
+        });
+        marker.addListener('mouseout', function() {
+          infowindow.close();
+        });
 
-      new google.maps.Marker({
-        map: this.map,
-        position: bar.location,
-        animation: google.maps.Animation.DROP
+
+        marker.id = bar.id;
+
+        google.maps.event.addListener(marker, 'click', () => {
+          this.props.history.push(`/bars/${marker.id}`);
+        });
       });
+    }
 
-    });
+    // this.markers = this.props.markers.map(bar => {
+    //
+    //   console.log('markers: ', bar);
+    //
+    //   this.markers.bar = new google.maps.Marker({
+    //     map: this.map,
+    //     position: bar.location,
+    //     animation: google.maps.Animation.DROP
+    //   });
+    //
+    //   this.markers.bar.infowindow = new google.maps.InfoWindow({
+    //     content: bar.name
+    //   });
+    //
+    //   this.markers.bar.addListener('click', function() {
+    //     this.markers.bar.infowindow.open(this.map, this.markers.bar);
+    //   });
+    //
+    // });
+
+
 
   }
 
