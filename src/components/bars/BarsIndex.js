@@ -79,18 +79,22 @@ class BarsIndex extends React.Component {
                 Add Bar
               </Link> }
             </div>
-            {this.state.bars.map(bar => {
-              return(
-                <div key={bar._id} className="image-tile col-md-3 col-sm-6 col-xs-12">
-                  <Link to={`/bars/${bar._id}`}>
-                    <img src={bar.imageOne} className="img-responsive index" />
-                    <p>{bar.name}</p>
-                  </Link>
-                </div>
-              );
-            })}
-
-            
+            <div className="bars-container">
+              {this.state.bars.map(bar => {
+                return(
+                  <div key={bar._id} className="card">
+                    <Link to={`/bars/${bar._id}`}>
+                      <div className="card-image">
+                        <img src={bar.imageOne} className="img-responsive index" />
+                      </div>
+                      <div className="media-content">
+                        <p className="title is-4">{bar.name}</p>
+                      </div>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
