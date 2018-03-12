@@ -41,12 +41,16 @@ body {
   }
 }
 
+.button-area {
+  height: 20vh;
+}
+
 #scrollButton {
   text-align: center;
 }
 
 #target {
   background: orange;
-  margin-top: 100vh;
+  // margin-top: 100vh;
   height: 2000px;
 }

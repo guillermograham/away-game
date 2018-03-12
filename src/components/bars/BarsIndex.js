@@ -67,7 +67,9 @@ class BarsIndex extends React.Component {
       <div>
         <div>
           { this.state.bars.length > 0 && <GoogleMap bars={this.state.bars} /> }
-          <a id="scrollButton" href="#target">Click me!</a>
+          <div className="button-area">
+            <a id="scrollButton" href="#target">Click me!</a>
+          </div>
         </div>
         <div id="target">
           <h2>Bars</h2>
@@ -87,6 +89,8 @@ class BarsIndex extends React.Component {
                 </div>
               );
             })}
+
+            
           </div>
         </div>
       </div>
