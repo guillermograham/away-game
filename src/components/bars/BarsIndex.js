@@ -85,7 +85,7 @@ class BarsIndex extends React.Component {
                   <div key={bar._id} className="card">
                     <Link to={`/bars/${bar._id}`}>
                       <div className="card-image">
-                        <img src={bar.imageOne} className="img-responsive index" />
+                        <img src={bar.image} className="index-photo" />
                       </div>
                       <div className="media-content">
                         <p className="title is-4">{bar.name}</p>

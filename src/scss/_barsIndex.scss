@@ -2,3 +2,26 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.card {
+  height: 300px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.index-photo {
+  height: 200px;
+  width: 300px;
+}
+
+.button-area {
+  height: 20vh;
+}
+
+#scrollButton {
+  text-align: center;
+}
+
+#target {
+  height: 1000px;
+}
