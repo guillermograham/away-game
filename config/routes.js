@@ -21,7 +21,11 @@ router.route('/bars/:id/reviews/:reviewId')
   .delete(bar.deleteReview); // tested
 
 router.route('/matches')
-  .get(match.index); // matches
+  .get(match.index) // matches
+  .post(match.new);
+
+router.route('/matches/:matchCode')
+  .get(match.show);
 
 router.route('/register')
   .post(auth.userRegister); // tested

@@ -3,7 +3,7 @@ mongoose.Promise = require('bluebird');
 
 const rp = require('request-promise');
 // const Bar = require('../models/bar');
-// const Match = require('../models/match');
+const Match = require('../models/match');
 
 function indexRoute(req, res) {
   rp({
@@ -23,6 +23,30 @@ function indexRoute(req, res) {
     });
 }
 
+function newRoute(req, res, next) {
+
+  Match
+    .create(req.body)
+    .then((match) => res.json(match))
+    .catch(next);
+}
+
+function showRoute(req, res, next) {
+
+  Match
+    .findOne({ matchCode: req.params.matchCode })
+    .exec()
+    .then((match) => {
+      if(!match) return res.notFound();
+
+      res.json(match);
+    })
+    .catch(next);
+
+}
+
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  new: newRoute,
+  show: showRoute
 };

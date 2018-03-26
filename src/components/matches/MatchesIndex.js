@@ -16,7 +16,13 @@ class MatchesIndex extends React.Component {
     const matchCode = externalCode.slice(41, 47);
     const newMatch = Object.assign({}, this.state.newMatch, { date: new Date(date), teams: [homeTeam, awayTeam], matchCode: matchCode });
     this.setState({ newMatch }, () => {
-      console.log(this.state);
+
+      Axios
+        .post('/api/matches', this.state.newMatch)
+        .then(res => {
+          this.props.history.push(`/matches/${res.data.matchCode}`);
+        })
+        .catch(err => console.log(err));
     });
   }
 
