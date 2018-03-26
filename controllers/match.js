@@ -23,6 +23,15 @@ function indexRoute(req, res) {
     });
 }
 
+function indexSavedRoute(req, res, next) {
+
+  Match
+    .find()
+    .exec()
+    .then((matches) => res.json(matches))
+    .catch(next);
+}
+
 function newRoute(req, res, next) {
 
   Match
@@ -47,6 +56,7 @@ function showRoute(req, res, next) {
 
 module.exports = {
   index: indexRoute,
+  indexSaved: indexSavedRoute,
   new: newRoute,
   show: showRoute
 };

@@ -27,6 +27,9 @@ router.route('/matches')
 router.route('/matches/:matchCode')
   .get(match.show);
 
+router.route('/savedmatches')
+  .get(match.indexSaved);
+
 router.route('/register')
   .post(auth.userRegister); // tested
 
