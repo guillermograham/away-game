@@ -35,6 +35,7 @@ class App extends React.Component {
               <Switch>
                 <Route exact path="/bars" component={BarsIndex} />
                 <Route path="/bars/:id" component={BarsShow} />
+                <Route path="/matches" component={MatchesIndex} />
                 <Route path="/login" component={UserLogin} />
                 <Route path="/register" component={UserRegister} />
               </Switch>

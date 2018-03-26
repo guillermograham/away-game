@@ -4,18 +4,24 @@
 }
 
 .card {
+  border-radius: 3px;
   height: 300px;
   margin: 0 auto;
   width: 300px;
 }
 
 .index-photo {
+  border-radius: 3px;
   height: 200px;
   width: 300px;
 }
 
 .button-area {
   height: 20vh;
+}
+
+.title {
+  text-align: center;
 }
 
 #scrollButton {
