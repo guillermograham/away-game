@@ -7,6 +7,7 @@ import UserLogin       from './components/auth/UserLogin';
 import UserRegister    from './components/auth/UserRegister';
 import BarsIndex from './components/bars/BarsIndex';
 import BarsShow from './components/bars/BarsShow';
+import MatchesIndex from './components/matches/MatchesIndex';
 
 import './scss/style.scss';
 

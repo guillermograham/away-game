@@ -31,6 +31,9 @@ const NavBar = ({ history, toggleBurger, showBurger }) => {
             <Link to="/bars" className="">Bars</Link>
           </div>
           <div className="navbar-item">
+            <Link to="/matches" className="">Matches</Link>
+          </div>
+          <div className="navbar-item">
             { type === 'User' && <a href="#" className="" onClick={logout}>Logout</a> }
           </div>
           <div className="navbar-item">
