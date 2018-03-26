@@ -12,6 +12,12 @@ class MatchesIndex extends React.Component {
     }
   }
 
+  matchExists = (externalCode) => {
+    const matchCode = externalCode.slice(41, 47);
+
+    return this.state.savedMatches.find(match => match.matchCode === matchCode);
+  }
+
   addMatch = (homeTeam, awayTeam, externalCode, date) => {
     const matchCode = externalCode.slice(41, 47);
     const newMatch = Object.assign({}, this.state.newMatch, { date: new Date(date), teams: [homeTeam, awayTeam], matchCode: matchCode });
@@ -34,6 +40,13 @@ class MatchesIndex extends React.Component {
         console.log(this.state);
       }))
       .catch(err => console.log(err));
+
+    Axios
+      .get('/api/savedmatches')
+      .then(res => this.setState({ savedMatches: res.data }, () => {
+        console.log(this.state);
+      }))
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -51,11 +64,16 @@ class MatchesIndex extends React.Component {
                     <p>{match.awayTeamName}</p>
                     <p>{match._links.self.href.slice(41, 47)}</p>
                     <p>{match.date}</p>
-                    <button
-                      onClick={() => this.addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
-                    >
-                      Add match
-                    </button>
+                    { !this.matchExists(match._links.self.href) && <div>
+                      <button
+                        onClick={() => this.addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
+                      >
+                        Add match
+                      </button>
+                    </div>}
+                    { this.matchExists(match._links.self.href) && <div>
+                      <h2>Add to my bar</h2>
+                    </div>}
                   </div>
                   }
 
