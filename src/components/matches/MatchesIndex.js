@@ -3,16 +3,30 @@ import Axios from 'axios';
 
 class MatchesIndex extends React.Component {
   state = {
-    matches: []
+    matches: [],
+    savedMatches: [],
+    newMatch: {
+      date: '',
+      teams: '',
+      matchCode: ''
+    }
+  }
+
+  addMatch = (homeTeam, awayTeam, externalCode, date) => {
+    const matchCode = externalCode.slice(41, 47);
+    const newMatch = Object.assign({}, this.state.newMatch, { date: new Date(date), teams: [homeTeam, awayTeam], matchCode: matchCode });
+    this.setState({ newMatch }, () => {
+      console.log(this.state);
+    });
   }
 
   componentWillMount() {
 
     Axios
       .get('/api/matches')
-      .then(res => {
-        console.log(res);
-      })
+      .then(res => this.setState({ matches: res.data.fixtures }, () => {
+        console.log(this.state);
+      }))
       .catch(err => console.log(err));
   }
 
@@ -20,6 +34,30 @@ class MatchesIndex extends React.Component {
     return(
       <div>
         <h2>MatchesIndex</h2>
+        {this.state.matches &&
+          <div>
+            { this.state.matches.map((match, i) => {
+              return(
+                <div key={i}>
+                  { match.status === 'SCHEDULED' &&
+                  <div className="card">
+                    <p>{match.homeTeamName}</p>
+                    <p>{match.awayTeamName}</p>
+                    <p>{match._links.self.href.slice(41, 47)}</p>
+                    <p>{match.date}</p>
+                    <button
+                      onClick={() => this.addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
+                    >
+                      Add match
+                    </button>
+                  </div>
+                  }
+
+                </div>
+              );
+            })}
+          </div>
+        }
       </div>
     );
   }
