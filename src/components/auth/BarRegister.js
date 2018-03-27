@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import BarRegisterForm from './BarRegisterForm';
 
@@ -32,11 +33,14 @@ class BarRegister extends React.Component {
 
   render() {
     return (
-      <BarRegisterForm
-        bar={this.state.bar}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <p>Already have an account? Sign in <Link to="/barlogin">here</Link></p>
+        <BarRegisterForm
+          bar={this.state.bar}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }
