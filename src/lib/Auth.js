@@ -20,7 +20,7 @@ class Auth {
 
   static isBar() {
     const token = this.getPayload();
-    return !!(token.barId !== null);
+    return !!(token.barId);
   }
 
   static logout() {
