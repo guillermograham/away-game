@@ -19,7 +19,13 @@ class MatchesShow extends React.Component {
 
     if (Auth.isAuthenticated()) {
       if (Auth.isBar()) {
-        console.log('this user has a bar');
+
+        Axios
+          .get(`/api/bars/${Auth.getPayload().barId}`)
+          .then(res => this.setState({ bar: res.data }), () => {
+            console.log('reached', this.state);
+          })
+          .catch(err => console.log(err));
       }
     }
   }
@@ -33,6 +39,9 @@ class MatchesShow extends React.Component {
             { this.state.match.teams && <div>
               <p>{this.state.match.teams[0]}</p>
               <p>{this.state.match.teams[1]}</p>
+            </div>}
+            { this.state.bar.name && <div>
+              <p>{this.state.bar.name}</p>
             </div>}
           </div>
         </div>
