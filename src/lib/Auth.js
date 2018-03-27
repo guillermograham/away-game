@@ -18,6 +18,11 @@ class Auth {
     return !!this.getToken();
   }
 
+  static isBar() {
+    const token = this.getPayload();
+    return !!(token.barId !== null);
+  }
+
   static logout() {
     localStorage.removeItem('token');
   }

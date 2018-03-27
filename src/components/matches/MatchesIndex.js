@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class MatchesIndex extends React.Component {
   state = {
@@ -72,7 +73,7 @@ class MatchesIndex extends React.Component {
                       </button>
                     </div>}
                     { this.matchExists(match._links.self.href) && <div>
-                      <h2>Add to my bar</h2>
+                      <Link to={`/matches/${match._links.self.href.slice(41, 47)}`}>View match details</Link>
                     </div>}
                   </div>
                   }

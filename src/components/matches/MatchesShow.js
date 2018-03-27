@@ -17,8 +17,10 @@ class MatchesShow extends React.Component {
       })
       .catch(err => console.log(err));
 
-    if (Auth.getPayload().barId) {
-      console.log('this user has a bar');
+    if (Auth.isAuthenticated()) {
+      if (Auth.isBar()) {
+        console.log('this user has a bar');
+      }
     }
   }
 
