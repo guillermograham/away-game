@@ -1,11 +1,12 @@
 import React from 'react';
 import Axios from 'axios';
 
-// import Auth from '../../lib/Auth';
+import Auth from '../../lib/Auth';
 
 class MatchesShow extends React.Component {
   state = {
-    match: {}
+    match: {},
+    bar: {}
   }
 
   componentWillMount() {
@@ -15,6 +16,10 @@ class MatchesShow extends React.Component {
         console.log('reached', this.state);
       })
       .catch(err => console.log(err));
+
+    if (Auth.getPayload().barId) {
+      console.log('this user has a bar');
+    }
   }
 
   render() {
