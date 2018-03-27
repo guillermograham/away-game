@@ -10,8 +10,17 @@ class MatchesShow extends React.Component {
   }
 
   addFixture = () => {
+    console.log('state: ', this.state);
     Axios
       .post('/api/addscreening', this.state)
+      .then(res => this.setState({ bar: res.data }))
+      .catch(err => console.log(err));
+  }
+
+  hasFixture = () => {
+    return this.state.bar.fixtures.some((match) => {
+      return match === this.state.match._id;
+    });
   }
 
   componentWillMount() {
@@ -49,6 +58,12 @@ class MatchesShow extends React.Component {
             { this.state.bar.name && <div>
               <p>{this.state.bar.name}</p>
               <p>barId: {this.state.bar._id}</p>
+              { this.hasFixture() &&
+                <button onClick={this.addFixture}>Remove screening</button>
+              }
+              { !this.hasFixture() &&
+                <button onClick={this.addFixture}>Add screening</button>
+              }
             </div>}
           </div>
         </div>
