@@ -70,10 +70,34 @@ function deleteReviewRoute(req, res, next) {
     .catch(next);
 }
 
+function addScreeningRoute(req, res, next) {
+  Bar
+    .findById(req.body.bar._id)
+    .exec()
+    .then((bar) => {
+      if(!bar) return res.notFound();
+
+      // check if fixture is already in bar' - indexOf returns -1 if it is not there
+      if (bar.fixtures.indexOf(req.body.match._id) > -1) {
+        // removing of the id
+        const index = bar.fixtures.indexOf(req.body.match._id);
+        bar.fixtures.splice(index, 1);
+      } else {
+        // push the id in to the bar.fixtures
+        bar.fixtures.push(req.body.match._id);
+      }
+
+      return bar.save();
+    })
+    .then((bar) => res.json(bar))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   createReview: createReviewRoute,
-  deleteReview: deleteReviewRoute
+  deleteReview: deleteReviewRoute,
+  addScreening: addScreeningRoute
 };

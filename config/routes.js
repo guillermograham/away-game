@@ -30,6 +30,9 @@ router.route('/matches/:matchCode')
 router.route('/savedmatches')
   .get(match.indexSaved);
 
+router.route('/addscreening')
+  .post(bar.addScreening);
+
 router.route('/register')
   .post(auth.userRegister); // tested
 

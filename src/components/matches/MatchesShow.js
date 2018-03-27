@@ -9,6 +9,11 @@ class MatchesShow extends React.Component {
     bar: {}
   }
 
+  addFixture = () => {
+    Axios
+      .post('/api/addscreening', this.state)
+  }
+
   componentWillMount() {
     Axios
       .get(`/api/matches/${this.props.match.params.matchCode}`)
@@ -37,11 +42,13 @@ class MatchesShow extends React.Component {
           <div className="page-banner col-md-10">
             <h2>{this.state.match.date}</h2>
             { this.state.match.teams && <div>
+              <p>matchId: {this.state.match._id}</p>
               <p>{this.state.match.teams[0]}</p>
               <p>{this.state.match.teams[1]}</p>
             </div>}
             { this.state.bar.name && <div>
               <p>{this.state.bar.name}</p>
+              <p>barId: {this.state.bar._id}</p>
             </div>}
           </div>
         </div>
