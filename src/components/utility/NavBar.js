@@ -42,6 +42,9 @@ const NavBar = ({ history, toggleBurger, showBurger }) => {
           <div className="navbar-item">
             { !Auth.isAuthenticated() && <Link to="/register" className="">Register</Link> }
           </div>
+          <div className="navbar-item">
+            { !Auth.isAuthenticated() && <Link to="/barregister" className="">I am a bar</Link> }
+          </div>
         </div>
       </div>
     </nav>
