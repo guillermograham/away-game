@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import Moment from 'react-moment';
 
 // import BackButton from '../utility/BackButton';
 import IndividualGoogleMap from '../utility/IndividualGoogleMap';
-
 import Auth from '../../lib/Auth';
 
 class BarsShow extends React.Component {
@@ -72,10 +72,14 @@ class BarsShow extends React.Component {
             <div>
               {this.state.bar.fixtures.map(fixture => {
                 return(
-                  <div key={fixture._id}>
-                    <p>{fixture.date}</p>
+                  <div
+                    key={fixture._id}
+                    className="card match-card"
+                  >
+                    <Moment format="DD/MM/YYYY HH:mm">{fixture.date}</Moment>
                     <p>{fixture.teams[0]}</p>
                     <p>{fixture.teams[1]}</p>
+                    <Link to={`/matches/${fixture.matchCode}`}>View match details</Link>
                   </div>
                 );
               })}

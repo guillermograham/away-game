@@ -2,6 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 
 import Auth from '../../lib/Auth';
+import BarCard from '../bars/BarCard';
 
 class MatchesShow extends React.Component {
   state = {
@@ -101,7 +102,10 @@ class MatchesShow extends React.Component {
           </div>
         </div>
         { this.state.match.screenings && this.state.match.screenings.map((bar) =>
-          <p key={bar._id}>{bar.name}</p>
+          <BarCard
+            key={bar._id}
+            bar={bar}
+          />
         )}
       </div>
     );

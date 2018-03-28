@@ -4,9 +4,9 @@ import Moment from 'react-moment';
 
 const MatchCard = ({ match, addMatch, matchExists }) => {
   return(
-    <div className="card">
+    <div className="card match-card">
       <div>
-        <p>{match.competition}</p>
+        <p>Premier League</p>
       </div>
       <div>
         <Moment format="DD/MM/YYYY HH:mm">{match.date}</Moment>
