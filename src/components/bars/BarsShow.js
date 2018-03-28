@@ -72,7 +72,7 @@ class BarsShow extends React.Component {
             <div>
               {this.state.bar.fixtures.map(fixture => {
                 return(
-                  <div key={fixture.id}>
+                  <div key={fixture._id}>
                     <p>{fixture.date}</p>
                     <p>{fixture.teams[0]}</p>
                     <p>{fixture.teams[1]}</p>

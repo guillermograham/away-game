@@ -11,7 +11,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Bar
     .findById(req.params.id)
-    // .populate('fixtures')
+    .populate('fixtures')
     .exec()
     .then((bar) => {
       if(!bar) return res.notFound();
