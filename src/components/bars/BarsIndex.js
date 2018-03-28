@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
+import BarCard from './BarCard';
 
 class BarsIndex extends React.Component {
   state = {
@@ -47,13 +48,13 @@ class BarsIndex extends React.Component {
       currentPosition = getPageScroll();
 
       body.classList.add('in-transition');
-      body.style.WebkitTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-      body.style.MozTransform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
-      body.style.transform = "translate(0, -" + (targetOffset - currentPosition) + "px)";
+      body.style.WebkitTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+      body.style.MozTransform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
+      body.style.transform = 'translate(0, -' + (targetOffset - currentPosition) + 'px)';
 
       window.setTimeout(function () {
         body.classList.remove('in-transition');
-        body.style.cssText = "";
+        body.style.cssText = '';
         window.scrollTo(0, targetOffset);
       }, animateTime);
 
@@ -82,16 +83,20 @@ class BarsIndex extends React.Component {
             <div className="bars-container">
               {this.state.bars.map(bar => {
                 return(
-                  <div key={bar._id} className="card">
-                    <Link to={`/bars/${bar._id}`}>
-                      <div className="card-image">
-                        <img src={bar.image} className="index-photo" />
-                      </div>
-                      <div className="media-content">
-                        <p className="title is-4">{bar.name}</p>
-                      </div>
-                    </Link>
-                  </div>
+                  <BarCard
+                    key={bar._id}
+                    bar={bar}
+                  />
+                  // <div key={bar._id} className="card">
+                  //   <Link to={`/bars/${bar._id}`}>
+                  //     <div className="card-image">
+                  //       <img src={bar.image} className="index-photo" />
+                  //     </div>
+                  //     <div className="media-content">
+                  //       <p className="title is-4">{bar.name}</p>
+                  //     </div>
+                  //   </Link>
+                  // </div>
                 );
               })}
             </div>
