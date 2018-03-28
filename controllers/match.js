@@ -44,6 +44,7 @@ function showRoute(req, res, next) {
 
   Match
     .findOne({ matchCode: req.params.matchCode })
+    .populate('screenings')
     .exec()
     .then((match) => {
       if(!match) return res.notFound();

@@ -5,7 +5,12 @@ import Auth from '../../lib/Auth';
 
 class MatchesShow extends React.Component {
   state = {
-    match: {},
+    match: {
+      date: '',
+      teams: [],
+      _id: '',
+      screenings: []
+    },
     bar: {}
   }
 

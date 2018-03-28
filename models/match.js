@@ -6,4 +6,20 @@ const matchSchema = new mongoose.Schema({
   matchCode: String
 });
 
+matchSchema.virtual('screenings', {
+  ref: 'Bar',
+  localField: '_id',
+  foreignField: 'fixtures'
+});
+
+// modifying the JSON output:
+matchSchema.set('toJSON', {
+  getters: true,
+  virtuals: true,
+  transform(obj, json) {
+    // delete json._id;
+    delete json.__v;
+  }
+});
+
 module.exports = mongoose.model('Match', matchSchema);
