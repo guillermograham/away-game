@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment';
 
 class MatchesIndex extends React.Component {
   state = {
@@ -64,7 +65,7 @@ class MatchesIndex extends React.Component {
                     <p>{match.homeTeamName}</p>
                     <p>{match.awayTeamName}</p>
                     <p>{match._links.self.href.slice(41, 47)}</p>
-                    <p>{match.date}</p>
+                    <Moment format="DD/MM/YYYY HH:mm">{match.date}</Moment>
                     { !this.matchExists(match._links.self.href) && <div>
                       <button
                         onClick={() => this.addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
