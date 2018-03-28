@@ -15,15 +15,43 @@ class MatchesShow extends React.Component {
   }
 
   addFixture = () => {
-    console.log('state: ', this.state);
+    if (this.hasFixture()) {
+      console.log('has fixture');
+    }
+
+    let match = null;
+
     Axios
       .post('/api/addscreening', this.state)
-      .then(res => this.setState({ bar: res.data }))
+      .then(res => {
+        if (this.addOrRemoveFixture(res.data)) {
+          console.log('add');
+
+          const newScreenings = this.state.match.screenings.slice();
+          newScreenings.push(res.data);
+          match = Object.assign({}, this.state.match, { screenings: newScreenings });
+
+        } else {
+          console.log('remove');
+
+          const newScreenings = this.state.match.screenings.slice();
+          const index = newScreenings.indexOf(res.data._id);
+          newScreenings.splice(index, 1);
+          match = Object.assign({}, this.state.match, { screenings: newScreenings });
+        }
+        this.setState({ bar: res.data, match: match });
+      })
       .catch(err => console.log(err));
   }
 
   hasFixture = () => {
     return this.state.bar.fixtures.some((match) => {
+      return match === this.state.match._id;
+    });
+  }
+
+  addOrRemoveFixture = (response) => {
+    return response.fixtures.some((match) => {
       return match === this.state.match._id;
     });
   }
@@ -72,6 +100,9 @@ class MatchesShow extends React.Component {
             </div>}
           </div>
         </div>
+        { this.state.match.screenings && this.state.match.screenings.map((bar) =>
+          <p key={bar._id}>{bar.name}</p>
+        )}
       </div>
     );
   }
