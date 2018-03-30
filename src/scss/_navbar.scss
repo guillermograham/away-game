@@ -6,6 +6,26 @@ nav {
           font-family: $family-primary;
           font-weight: 100;
           font-size: 50px;
+          margin-left: 100px;
+        }
+      }
+    }
+    .navbar-end {
+      margin-right: 100px;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  nav {
+    div {
+      &.navbar-brand {
+        a {
+          h1 {
+            font-size: 20px;
+            margin-left: 0px;
+          }
         }
       }
     }
