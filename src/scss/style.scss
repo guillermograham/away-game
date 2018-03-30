@@ -11,7 +11,7 @@ $link: #8884FF;
 $success: #A0E8AF;
 $danger: #FF5151;
 $background: white;
-$family-primary: 'Karla', sans-serif;
+$family-primary: 'Source Sans Pro Extra-Light', sans-serif;
 
 // 5. Add new color variables to the color map.
 // @import "bulma/utilities/derived-variables.sass";
@@ -25,6 +25,7 @@ $family-primary: 'Karla', sans-serif;
 // 6. Import the rest of Bulma
 @import "bulma/bulma";
 @import "BarsIndex";
+@import "navbar";
 
 .google-map {
   border-radius: 3px;

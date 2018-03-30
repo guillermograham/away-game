@@ -1,0 +1,13 @@
+nav {
+  div {
+    &.navbar-brand {
+      a {
+        h1 {
+          font-family: $family-primary;
+          font-weight: 100;
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
