@@ -40,3 +40,18 @@ div {
 #target {
   height: 1000px;
 }
+
+@media only screen and (max-width: 640px) {
+  div {
+    &.index-map {
+      height: 60vh;
+      margin: auto;
+      margin-top: 30px;
+      width: 250px;
+    }
+  }
+
+  .bars-container {
+    width: 300px;
+  }
+}
