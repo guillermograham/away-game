@@ -95,7 +95,7 @@ class GoogleMap extends React.Component {
 
   render() {
     return (
-      <div className="google-map" ref={element => this.mapCanvas = element}></div>
+      <div className="google-map index-map" ref={element => this.mapCanvas = element}></div>
     );
   }
 }

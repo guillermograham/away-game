@@ -69,11 +69,10 @@ class BarsIndex extends React.Component {
         <div>
           { this.state.bars.length > 0 && <GoogleMap bars={this.state.bars} /> }
           <div className="button-area">
-            <a id="scrollButton" href="#target">Click me!</a>
+            <a id="scrollButton" href="#target">See all bars<br/><i className="fas fa-chevron-down"></i></a>
           </div>
         </div>
         <div id="target">
-          <h2>Bars</h2>
           <div className="row">
             <div className="page-banner col-md-12">
               { Auth.isAuthenticated() && <Link to="/bars/new" className="main-button">
@@ -87,16 +86,6 @@ class BarsIndex extends React.Component {
                     key={bar._id}
                     bar={bar}
                   />
-                  // <div key={bar._id} className="card">
-                  //   <Link to={`/bars/${bar._id}`}>
-                  //     <div className="card-image">
-                  //       <img src={bar.image} className="index-photo" />
-                  //     </div>
-                  //     <div className="media-content">
-                  //       <p className="title is-4">{bar.name}</p>
-                  //     </div>
-                  //   </Link>
-                  // </div>
                 );
               })}
             </div>
