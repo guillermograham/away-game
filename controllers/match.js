@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 const rp = require('request-promise');
-// const Bar = require('../models/bar');
 const Match = require('../models/match');
 
 function indexRoute(req, res) {
@@ -15,7 +14,6 @@ function indexRoute(req, res) {
     }
   })
     .then((response) => {
-      console.log(response);
       res.json(response);
     })
     .catch((err) => {
