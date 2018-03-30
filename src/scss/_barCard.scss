@@ -1,0 +1,19 @@
+div {
+  &.bar-card {
+    height: 250px;
+    width: 250px;
+    .card-image {
+      width: 250px;
+      .index-photo {
+        height: 150px;
+        width: 250px;
+      }
+    }
+    .bar-link-title {
+      color: black;
+      font-family: $family-primary;
+      font-size: 22px;
+      text-align: center;
+    }
+  }
+}
