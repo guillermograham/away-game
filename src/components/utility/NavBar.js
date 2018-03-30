@@ -28,19 +28,19 @@ const NavBar = ({ history, toggleBurger, showBurger }) => {
       <div className={`${(showBurger ? 'is-active' : '')} navbar-menu`} onClick={toggleBurger} id="nav-menu">
         <div className="navbar-end">
           <div className="navbar-item">
-            <Link to="/bars" className="">Bars</Link>
+            <Link to="/bars" className=""><i className="fas fa-beer"></i> Bars</Link>
           </div>
           <div className="navbar-item">
-            <Link to="/matches" className="">Matches</Link>
+            <Link to="/matches" className=""><i className="fas fa-futbol"></i> Matches</Link>
           </div>
           { Auth.isAuthenticated() && <div className="navbar-item">
-            <a href="#" className="" onClick={logout}>Logout</a>
+            <a href="#" className="" onClick={logout}><i className="fas fa-sign-out-alt"></i> Logout</a>
           </div>}
           <div className="navbar-item">
-            { !Auth.isAuthenticated() && <Link to="/login" className="">Login</Link> }
+            { !Auth.isAuthenticated() && <Link to="/login" className=""><i className="fas fa-sign-in-alt"></i> Login</Link> }
           </div>
           <div className="navbar-item">
-            { !Auth.isAuthenticated() && <Link to="/register" className="">Register</Link> }
+            { !Auth.isAuthenticated() && <Link to="/register" className=""><i className="fas fa-user-plus"></i> Register</Link> }
           </div>
         </div>
       </div>
