@@ -12,6 +12,7 @@ $success: #A0E8AF;
 $danger: #FF5151;
 $background: white;
 $family-primary: 'Source Sans Pro Extra-Light', sans-serif;
+$family-secondary: 'Open Sans', sans-serif;
 
 // 5. Add new color variables to the color map.
 // @import "bulma/utilities/derived-variables.sass";
@@ -26,6 +27,7 @@ $family-primary: 'Source Sans Pro Extra-Light', sans-serif;
 @import "bulma/bulma";
 @import "BarsIndex";
 @import "navbar";
+@import "matchCard";
 
 .google-map {
   border-radius: 3px;

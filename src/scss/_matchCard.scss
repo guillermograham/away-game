@@ -1,0 +1,10 @@
+div {
+  &.match-card {
+    p {
+      &.competition-name {
+        font-family: $family-secondary;
+        color: blue;
+      }
+    }
+  }
+}
