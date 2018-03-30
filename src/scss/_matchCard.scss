@@ -1,10 +1,27 @@
 div {
   &.match-card {
-    p {
-      &.competition-name {
-        font-family: $family-secondary;
-        color: blue;
-      }
+    .competition-name {
+      font-family: $family-secondary;
+      color: $sub-grey;
+    }
+    .date-time {
+      font-family: $family-secondary;
+      color: $sub-grey;
+    }
+    .team-name {
+      font-family: $family-primary;
+      font-size: 26px;
+    }
+    .match-info-button {
+      background-color: transparent;
+      border: 1px solid $bright;
+      border-radius: 3px;
+      color: $bright;
+      display: inline-block;
+      font-family: $family-secondary;
+      font-size: 16px;
+      text-align: center;
+      width: 200px;
     }
   }
 }

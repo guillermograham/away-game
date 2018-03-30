@@ -9,23 +9,29 @@ const MatchCard = ({ match, addMatch, matchExists }) => {
         <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
       </div>
       <div>
-        <Moment format="MMM Do HH:mm">{match.date}</Moment>
+        <Moment format="MMM Do HH:mm" className="date-time">{match.date}</Moment>
       </div>
       <div>
-        <p>{match.homeTeamName}</p>
+        <p className="team-name">{match.homeTeamName}</p>
       </div>
       <div>
-        <p>{match.awayTeamName}</p>
+        <p className="team-name">{match.awayTeamName}</p>
       </div>
       { !matchExists(match._links.self.href) && <div>
         <button
           onClick={() => addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
+          className="match-info-button"
         >
-          Add match
+          Bars showing this match
         </button>
       </div>}
       { matchExists(match._links.self.href) && <div>
-        <Link to={`/matches/${match._links.self.href.slice(41, 47)}`}>View match details</Link>
+        <Link
+          to={`/matches/${match._links.self.href.slice(41, 47)}`}
+          className="match-info-button"
+        >
+          Bars showing this match
+        </Link>
       </div>}
     </div>
   );
