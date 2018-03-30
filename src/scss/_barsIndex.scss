@@ -14,10 +14,6 @@ div {
   width: $main-width;
 }
 
-
-
-
-
 .button-area {
   height: 20vh;
 }
@@ -41,11 +37,23 @@ div {
   height: 1000px;
 }
 
+@media only screen and (max-width: 900px) {
+
+  div {
+    &.index-map {
+      margin-top: 30px;
+      width: 600px;
+    }
+  }
+
+  .bars-container {
+    width: 600px;
+  }
+}
+
 @media only screen and (max-width: 640px) {
   div {
     &.index-map {
-      height: 60vh;
-      margin: auto;
       margin-top: 30px;
       width: 250px;
     }

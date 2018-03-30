@@ -16,6 +16,23 @@ nav {
   }
 }
 
+@media only screen and (max-width: 900px) {
+
+  nav {
+    div {
+      &.navbar-brand {
+        a {
+          h1 {
+            font-size: 30px;
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 @media only screen and (max-width: 640px) {
 
   nav {
@@ -24,7 +41,6 @@ nav {
         a {
           h1 {
             font-size: 20px;
-            margin-left: 0px;
           }
         }
       }
