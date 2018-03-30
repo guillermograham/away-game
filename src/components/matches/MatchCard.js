@@ -6,7 +6,7 @@ const MatchCard = ({ match, addMatch, matchExists }) => {
   return(
     <div className="card match-card">
       <div>
-        <p className="competition-name">Premier League</p>
+        <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
       </div>
       <div>
         <Moment format="MMM Do HH:mm">{match.date}</Moment>
