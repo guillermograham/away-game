@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import UserLoginForm from './UserLoginForm';
 
@@ -33,11 +34,14 @@ class UserLogin extends React.Component {
 
   render() {
     return (
-      <UserLoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div>
+        <UserLoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <Link to="/barregister" className="">I am a bar</Link>
+      </div>
     );
   }
 }
