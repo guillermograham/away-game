@@ -5,16 +5,13 @@ import Moment from 'react-moment';
 const MatchCard = ({ match, addMatch, matchExists }) => {
   return(
     <div className="card match-card">
-      <div>
+      <div className="match-info">
         <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
-      </div>
-      <div>
         <Moment format="MMM Do HH:mm" className="date-time">{match.date}</Moment>
       </div>
-      <div>
+      <div className="team-section">
         <p className="team-name">{match.homeTeamName}</p>
-      </div>
-      <div>
+        <p className="versus">vs</p>
         <p className="team-name">{match.awayTeamName}</p>
       </div>
       { !matchExists(match._links.self.href) && <div>
