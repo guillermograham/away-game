@@ -34,7 +34,7 @@ class UserLogin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <UserLoginForm
           user={this.state.user}
           handleChange={this.handleChange}

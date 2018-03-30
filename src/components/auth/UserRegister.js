@@ -32,11 +32,13 @@ class UserRegister extends React.Component {
 
   render() {
     return (
-      <UserRegisterForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div className="container">
+        <UserRegisterForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

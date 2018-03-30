@@ -35,7 +35,7 @@ class App extends React.Component {
             />
           </header>
           <main>
-            <div className="container">
+            <div className="">
               <Switch>
                 <Route exact path="/bars" component={BarsIndex} />
                 <Route path="/bars/:id" component={BarsShow} />

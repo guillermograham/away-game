@@ -1,0 +1,30 @@
+
+div {
+  div {
+    &.row {
+      .bar-info {
+        text-align: center;
+      }
+    }
+  }
+  .show-container {
+    width: $main-width;
+    .map-image-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .image-container {
+        height: 300px;
+        .barshow-image {
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+
+.show-map {
+  border-radius: 3px;
+  height: 300px;
+  width: 300px;
+}

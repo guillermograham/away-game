@@ -34,17 +34,15 @@ $main-width: 900px;
 @import "matchCard";
 @import "matchGrid";
 @import "barCard";
+@import "barShow";
 
-.google-map {
-  border-radius: 3px;
-  height: 60vh;
-  width: $main-width;
-}
+// .google-map {
+//   border-radius: 3px;
+//   height: 60vh;
+//   width: $main-width;
+// }
 
-.show-map {
-  border-radius: 3px;
-  height: 200px;
-}
+
 
 body {
   &.in-transition {

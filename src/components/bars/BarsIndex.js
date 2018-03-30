@@ -65,7 +65,7 @@ class BarsIndex extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <div>
           { this.state.bars.length > 0 && <GoogleMap bars={this.state.bars} /> }
           <div className="button-area">

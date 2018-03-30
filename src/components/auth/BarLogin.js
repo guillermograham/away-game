@@ -33,11 +33,13 @@ class BarLogin extends React.Component {
 
   render() {
     return (
-      <UserLoginForm
-        user={this.state.user}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}
-      />
+      <div className="container">
+        <UserLoginForm
+          user={this.state.user}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </div>
     );
   }
 }

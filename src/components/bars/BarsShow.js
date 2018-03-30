@@ -35,13 +35,12 @@ class BarsShow extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="page-banner col-md-10">
+          <div className="bar-info">
             <h2>{this.state.bar.name}</h2>
             <p>{this.state.bar.addressLine1}</p>
             <p>{this.state.bar.city}</p>
             <p>{this.state.bar.postcode}</p>
             <p>{this.state.bar.createdBy}</p>
-            { this.state.bar.location && <IndividualGoogleMap className="show-map" center={this.state.bar.location} /> }
 
           </div>
           {/* <div className="page-banner col-md-2">
@@ -55,35 +54,48 @@ class BarsShow extends React.Component {
             </button> }
           </div> */}
         </div>
-        <div className="row">
-          <div className="image-tile col-md-6">
-            <img src={this.state.bar.image} className="img-responsive" />
+        <div className="container show-container">
+          <hr/>
+          <div className="row">
+            <p>{this.state.bar.description}</p>
           </div>
-          <div className="col-md-g">
-            Google map
+          <hr/>
+          <div className="row map-image-container">
+            <div className="image-container">
+              <img src={this.state.bar.image} className="img-responsive barshow-image" />
+            </div>
+            <div className="map-container">
+              { this.state.bar.location && <IndividualGoogleMap className="show-map" center={this.state.bar.location} /> }
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <p>{this.state.bar.description}</p>
-        </div>
-        <div className="row">
-          <h4>Fixtures</h4>
-          { this.state.bar.fixtures &&
-            <div>
-              {this.state.bar.fixtures.map(fixture => {
-                return(
-                  <div
-                    key={fixture._id}
-                    className="card match-card"
-                  >
-                    <Moment format="DD/MM/YYYY HH:mm">{fixture.date}</Moment>
-                    <p>{fixture.teams[0]}</p>
-                    <p>{fixture.teams[1]}</p>
-                    <Link to={`/matches/${fixture.matchCode}`}>View match details</Link>
-                  </div>
-                );
-              })}
-            </div> }
+          <hr/>
+          <div className="row">
+            <h4>Fixtures</h4>
+            { this.state.bar.fixtures &&
+              <div>
+                {this.state.bar.fixtures.map(fixture => {
+                  return(
+                    <div
+                      key={fixture._id}
+                      className="card match-card"
+                    >
+                      <div className="match-info">
+                        <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
+                        <Moment format="MMM Do HH:mm" className="date-time">{fixture.date}</Moment>
+                      </div>
+                      <div className="team-section">
+                        <p className="team-name">{fixture.teams[0]}</p>
+                        <p className="versus">vs</p>
+                        <p className="team-name">{fixture.teams[1]}</p>
+                      </div>
+
+
+                      <Link to={`/matches/${fixture.matchCode}`} className="match-info-button">View match details</Link>
+                    </div>
+                  );
+                })}
+              </div> }
+          </div>
         </div>
       </div>
     );

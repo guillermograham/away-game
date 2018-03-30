@@ -33,7 +33,7 @@ class BarRegister extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <p>Already have an account? Sign in <Link to="/barlogin">here</Link></p>
         <BarRegisterForm
           bar={this.state.bar}
