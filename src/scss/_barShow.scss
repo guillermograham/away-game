@@ -45,6 +45,10 @@ div {
       }
     }
   }
+  .fixtures-title {
+    font-family: $family-secondary;
+    text-align: center;
+  }
 }
 
 .show-map {
@@ -71,6 +75,43 @@ div {
         .show-map {
           height: 200px;
           width: 200px;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 640px) {
+
+  div {
+    div {
+      &.row {
+        .bar-info {
+          height: 80px;
+          .page-title {
+            font-size: 16px;
+          }
+          .page-info {
+            font-size: 12px;
+          }
+        }
+        .buttons-bar {
+          height: 30px;
+        }
+      }
+      .show-container {
+        width: 300px;
+        .bar-description {
+          font-size: 10px;
+        }
+        .map-image-container {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .image-container {
+            margin-bottom: 20px;
+          }
         }
       }
     }

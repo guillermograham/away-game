@@ -75,7 +75,7 @@ class BarsShow extends React.Component {
           </div>
           <hr/>
           <div className="row">
-            <h4>Fixtures</h4>
+            <h3 className="fixtures-title">Upcoming Fixtures</h3>
             { this.state.bar.fixtures &&
               <div>
                 {this.state.bar.fixtures.map(fixture => {
