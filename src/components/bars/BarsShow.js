@@ -41,8 +41,15 @@ class BarsShow extends React.Component {
             <p className="page-info">{this.state.bar.city}</p>
             <p className="page-info">{this.state.bar.postcode}</p>
           </div>
-          {/* <div className="page-banner col-md-2">
-            <BackButton history={this.props.history} />
+          <div className="buttons-bar">
+            {/* <BackButton history={this.props.history} /> */}
+
+            {Auth.isAuthenticated() && Auth.isBar() && `${Auth.getPayload().barId}` === this.state.bar._id && <Link to={`/bars/${this.state.bar._id}/edit`} className="standard-button">
+              Edit
+            </Link> }
+
+
+
             { `${Auth.getPayload().userId}` === this.state.bar.createdBy && <Link to={`/bars/${this.state.bar.id}/edit`} className="standard-button">
               Edit
             </Link> }
@@ -50,9 +57,6 @@ class BarsShow extends React.Component {
             { Auth.isAuthenticated() === this.state.bar.createdBy && <button className="main-button" onClick={this.deleteBar}>
               Delete
             </button> }
-          </div> */}
-          <div className="buttons-bar">
-
           </div>
         </div>
         <div className="container show-container">

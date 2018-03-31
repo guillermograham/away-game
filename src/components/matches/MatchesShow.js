@@ -101,12 +101,21 @@ class MatchesShow extends React.Component {
             </div>}
           </div>
         </div>
-        { this.state.match.screenings && this.state.match.screenings.map((bar) =>
+
+        {this.state.match.screenings.length > 0 && <div className="bars-container">
+          {this.state.match.screenings.map((bar) =>
+            <BarCard
+              key={bar._id}
+              bar={bar}
+            />
+          )}
+        </div>}
+        {/* { this.state.match.screenings && this.state.match.screenings.map((bar) =>
           <BarCard
             key={bar._id}
             bar={bar}
           />
-        )}
+        )} */}
       </div>
     );
   }
