@@ -90,14 +90,16 @@ class MatchesShow extends React.Component {
           </div>
         </div>
         <div className="row">
-          { this.state.bar.name && <div>
-            { this.hasFixture() &&
-              <button onClick={this.addFixture}>Remove screening from {this.state.bar.name}</button>
-            }
-            { !this.hasFixture() &&
-              <button onClick={this.addFixture}>Add screening to {this.state.bar.name}</button>
-            }
-          </div>}
+          <div className="buttons-bar">
+            { this.state.bar.name && <div>
+              { this.hasFixture() &&
+                <button onClick={this.addFixture}>Remove screening from {this.state.bar.name}</button>
+              }
+              { !this.hasFixture() &&
+                <button onClick={this.addFixture}>Add screening to {this.state.bar.name}</button>
+              }
+            </div>}
+          </div>
         </div>
         { this.state.match.screenings && this.state.match.screenings.map((bar) =>
           <BarCard

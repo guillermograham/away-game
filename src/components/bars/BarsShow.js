@@ -51,6 +51,9 @@ class BarsShow extends React.Component {
               Delete
             </button> }
           </div> */}
+          <div className="buttons-bar">
+
+          </div>
         </div>
         <div className="container show-container">
           <hr/>

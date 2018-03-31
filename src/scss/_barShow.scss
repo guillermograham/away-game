@@ -3,11 +3,20 @@ div {
   div {
     &.row {
       .bar-info {
+        background-color: $bright;
+        color: white;
         font-family: $family-secondary;
         text-align: center;
         .page-title {
           font-size: 22px;
         }
+      }
+      .buttons-bar {
+        background-color: $sub-grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
       }
     }
   }
