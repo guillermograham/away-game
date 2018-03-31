@@ -50,13 +50,13 @@ class BarsShow extends React.Component {
 
 
 
-            { `${Auth.getPayload().userId}` === this.state.bar.createdBy && <Link to={`/bars/${this.state.bar.id}/edit`} className="standard-button">
+            {/* { `${Auth.getPayload().userId}` === this.state.bar.createdBy && <Link to={`/bars/${this.state.bar.id}/edit`} className="standard-button">
               Edit
             </Link> }
             {' '}
             { Auth.isAuthenticated() === this.state.bar.createdBy && <button className="main-button" onClick={this.deleteBar}>
               Delete
-            </button> }
+            </button> } */}
           </div>
         </div>
         <div className="container show-container">
@@ -99,6 +99,8 @@ class BarsShow extends React.Component {
                     </div>
                   );
                 })}
+                {this.state.bar.fixtures.length === 0 &&
+                <p className="message">There are currently no scheduled fixtures.</p>}
               </div> }
           </div>
         </div>

@@ -110,6 +110,8 @@ class MatchesShow extends React.Component {
             />
           )}
         </div>}
+        {this.state.match.screenings.length === 0 &&
+        <p className="message">There are currently no bars showing this match.</p>}
         {/* { this.state.match.screenings && this.state.match.screenings.map((bar) =>
           <BarCard
             key={bar._id}

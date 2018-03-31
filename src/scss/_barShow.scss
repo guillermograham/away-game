@@ -51,6 +51,15 @@ div {
   }
 }
 
+p {
+  &.message {
+    font-family: $family-secondary;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+  }
+}
+
 .show-map {
   border-radius: 3px;
   height: 300px;
@@ -114,6 +123,12 @@ div {
           }
         }
       }
+    }
+  }
+
+  p {
+    &.message {
+      font-size: 12px;
     }
   }
 }
