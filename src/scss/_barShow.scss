@@ -6,9 +6,11 @@ div {
         background-color: $bright;
         color: white;
         font-family: $family-secondary;
+        font-weight: bold;
         text-align: center;
         .page-title {
           font-size: 22px;
+          font-weight: bold;
         }
       }
       .buttons-bar {
@@ -44,4 +46,25 @@ div {
   border-radius: 3px;
   height: 300px;
   width: 300px;
+}
+
+@media only screen and (max-width: 900px) {
+
+  div {
+    .show-container {
+      width: 600px;
+      .map-image-container {
+        .image-container {
+          height: 200px;
+          .barshow-image {
+            height: 200px;
+          }
+        }
+        .show-map {
+          height: 200px;
+          width: 200px;
+        }
+      }
+    }
+  }
 }
