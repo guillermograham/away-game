@@ -62,7 +62,7 @@ class BarsShow extends React.Component {
         <div className="container show-container">
           <hr/>
           <div className="row">
-            <p>{this.state.bar.description}</p>
+            <p className="bar-description">{this.state.bar.description}</p>
           </div>
           <hr/>
           <div className="row map-image-container">
