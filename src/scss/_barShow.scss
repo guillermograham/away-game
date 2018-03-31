@@ -3,7 +3,11 @@ div {
   div {
     &.row {
       .bar-info {
+        font-family: $family-secondary;
         text-align: center;
+        .page-title {
+          font-size: 22px;
+        }
       }
     }
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import Moment from 'react-moment';
 
 import Auth from '../../lib/Auth';
 import BarCard from '../bars/BarCard';
@@ -82,24 +83,21 @@ class MatchesShow extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="page-banner col-md-10">
-            <h2>{this.state.match.date}</h2>
-            { this.state.match.teams && <div>
-              <p>matchId: {this.state.match._id}</p>
-              <p>{this.state.match.teams[0]}</p>
-              <p>{this.state.match.teams[1]}</p>
-            </div>}
-            { this.state.bar.name && <div>
-              <p>{this.state.bar.name}</p>
-              <p>barId: {this.state.bar._id}</p>
-              { this.hasFixture() &&
-                <button onClick={this.addFixture}>Remove screening</button>
-              }
-              { !this.hasFixture() &&
-                <button onClick={this.addFixture}>Add screening</button>
-              }
-            </div>}
+          <div className="bar-info">
+            <h2 className="page-title">{this.state.match.teams[0]} vs {this.state.match.teams[1]}</h2>
+            <p className="page-info"><i className="fas fa-futbol"></i> Premier League</p>
+            <Moment format="MMM Do HH:mm" className="page-info">{this.state.match.date}</Moment>
           </div>
+        </div>
+        <div className="row">
+          { this.state.bar.name && <div>
+            { this.hasFixture() &&
+              <button onClick={this.addFixture}>Remove screening from {this.state.bar.name}</button>
+            }
+            { !this.hasFixture() &&
+              <button onClick={this.addFixture}>Add screening to {this.state.bar.name}</button>
+            }
+          </div>}
         </div>
         { this.state.match.screenings && this.state.match.screenings.map((bar) =>
           <BarCard

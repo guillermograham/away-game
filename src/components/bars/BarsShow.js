@@ -36,12 +36,10 @@ class BarsShow extends React.Component {
       <div>
         <div className="row">
           <div className="bar-info">
-            <h2>{this.state.bar.name}</h2>
-            <p>{this.state.bar.addressLine1}</p>
-            <p>{this.state.bar.city}</p>
-            <p>{this.state.bar.postcode}</p>
-            <p>{this.state.bar.createdBy}</p>
-
+            <h2 className="page-title">{this.state.bar.name}</h2>
+            <p className="page-info">{this.state.bar.addressLine1}</p>
+            <p className="page-info">{this.state.bar.city}</p>
+            <p className="page-info">{this.state.bar.postcode}</p>
           </div>
           {/* <div className="page-banner col-md-2">
             <BackButton history={this.props.history} />
