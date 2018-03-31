@@ -74,11 +74,6 @@ class BarsIndex extends React.Component {
         </div>
         <div id="target">
           <div className="row">
-            <div className="page-banner col-md-12">
-              { Auth.isAuthenticated() && <Link to="/bars/new" className="main-button">
-                Add Bar
-              </Link> }
-            </div>
             <div className="bars-container">
               {this.state.bars.map(bar => {
                 return(
