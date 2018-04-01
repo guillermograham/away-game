@@ -1,6 +1,4 @@
 
-
-
 div {
   &.user-login {
     form {
@@ -24,6 +22,36 @@ div {
       margin: 0 auto;
       margin-top: 5px;
       width: $login-form-width;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  div {
+    &.user-login {
+      form {
+        &.login-form {
+          margin: 0 auto;
+          margin-top: 50px;
+          width: 250px;
+          .input {
+            margin-top: 5px;
+          }
+        }
+        button {
+          &.login-button {
+            margin-top: 5px;
+            width: 250px;
+          }
+        }
+      }
+      .bar-link {
+        display: block;
+        margin: 0 auto;
+        margin-top: 5px;
+        width: 250px;
+      }
     }
   }
 }
