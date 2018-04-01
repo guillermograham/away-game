@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import UserRegisterForm from './UserRegisterForm';
 
@@ -32,12 +33,23 @@ class UserRegister extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
+        <div className="row">
+          <div className="index-info">
+
+          </div>
+        </div>
+        <div className="row">
+          <div className="index-bar">
+
+          </div>
+        </div>
         <UserRegisterForm
           user={this.state.user}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
+        <Link to="/barregister" className="button is-outlined bar-link">I am a bar</Link>
       </div>
     );
   }

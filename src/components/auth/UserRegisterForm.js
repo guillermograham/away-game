@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="bar-register-form">
       <div className="form-group">
         <input
           type="text"
@@ -10,7 +10,7 @@ const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Username"
           onChange={handleChange}
           value={user.username}
-          className="form-control"
+          className="input"
         />
       </div>
       <div className="form-group">
@@ -20,7 +20,7 @@ const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Email"
           onChange={handleChange}
           value={user.email}
-          className="form-control"
+          className="input"
         />
       </div>
       <div className="form-group">
@@ -30,7 +30,7 @@ const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Password"
           onChange={handleChange}
           value={user.password}
-          className="form-control"
+          className="input"
         />
       </div>
       <div className="form-group">
@@ -40,11 +40,11 @@ const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
           placeholder="Confirm Password"
           onChange={handleChange}
           value={user.passwordConfirmation}
-          className="form-control"
+          className="input"
         />
       </div>
 
-      <button className="main-button">Register</button>
+      <button className="button is-primary login-button">Register</button>
     </form>
   );
 };

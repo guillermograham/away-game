@@ -26,7 +26,7 @@ class BarLogin extends React.Component {
       .then((res) => {
         console.log(res);
         Auth.setToken(res.data.token);
-        this.props.history.push('/');
+        this.props.history.push(`/bars/${res.data.bar._id}`);
       })
       .catch(err => console.log(err));
   }

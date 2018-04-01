@@ -55,6 +55,12 @@ div {
       }
     }
   }
+  .bar-link {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: $login-form-width;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -110,6 +116,10 @@ div {
           width: 250px;
         }
       }
+    }
+    .bar-link {
+      margin-top: 5px;
+      width: 250px;
     }
   }
 

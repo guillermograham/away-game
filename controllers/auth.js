@@ -39,7 +39,7 @@ function barLogin(req, res, next) {
       if(!bar || !bar.validatePassword(req.body.password)) return res.unauthorized();
 
       const token = jwt.sign({ barId: bar.id }, secret, { expiresIn: '1hr' });
-      return res.json({ token, message: `Welcome back ${bar.name}` });
+      return res.json({ token, bar });
     })
     .catch(next);
 }
