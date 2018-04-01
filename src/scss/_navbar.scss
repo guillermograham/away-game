@@ -1,6 +1,6 @@
 nav {
   &.is-transparent {
-    background-color: transparent;
+    background-color: $bright;
     color: white;
   }
   div {
@@ -16,8 +16,21 @@ nav {
     }
     .navbar-end {
       margin-right: 100px;
+      .navbar-item {
+        a {
+          color: black;
+          &.front-page {
+            color: black;
+            // font-weight: bold;
+          }
+        }
+      }
     }
   }
+}
+
+.is-active {
+  color: black;
 }
 
 @media only screen and (max-width: 900px) {

@@ -28,7 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <div className="landing-page">
+        <div>
           <header>
             <Navbar
               toggleBurger={this.toggleBurger}
