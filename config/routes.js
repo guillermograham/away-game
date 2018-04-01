@@ -33,6 +33,9 @@ router.route('/savedmatches')
 router.route('/addscreening')
   .post(bar.addScreening);
 
+router.route('/getbarinfo/:id')
+  .get(bar.getBarInfo);
+
 router.route('/register')
   .post(auth.userRegister); // tested
 

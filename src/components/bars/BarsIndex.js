@@ -65,29 +65,40 @@ class BarsIndex extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div>
-          { this.state.bars.length > 0 && <GoogleMap bars={this.state.bars} /> }
-          <div className="button-area">
-            <a id="scrollButton" href="#target">See all bars<br/><i className="fas fa-chevron-down"></i></a>
+      <div>
+        <div className="row">
+          <div className="bar-info">
+
           </div>
         </div>
-        <div id="target">
-          <div className="row">
-            <div className="bars-container">
-              {this.state.bars.map(bar => {
-                return(
-                  <BarCard
-                    key={bar._id}
-                    bar={bar}
-                  />
-                );
-              })}
+        <div className="row">
+          <div className="buttons-bar">
+
+          </div>
+        </div>
+        <div className="container">
+          <div>
+            { this.state.bars.length > 0 && <GoogleMap bars={this.state.bars} /> }
+            <div className="button-area">
+              <a id="scrollButton" href="#target">See all bars<br/><i className="fas fa-chevron-down"></i></a>
+            </div>
+          </div>
+          <div id="target">
+            <div className="row">
+              <div className="bars-container">
+                {this.state.bars.map(bar => {
+                  return(
+                    <BarCard
+                      key={bar._id}
+                      bar={bar}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     );
   }
 }

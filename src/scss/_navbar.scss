@@ -1,4 +1,8 @@
 nav {
+  &.is-transparent {
+    background-color: transparent;
+    color: white;
+  }
   div {
     &.navbar-brand {
       a {

@@ -93,11 +93,24 @@ function addScreeningRoute(req, res, next) {
     .catch(next);
 }
 
+function getBarInfoRoute (req, res, next) {
+  Bar
+    .findById(req.params.id)
+    .exec()
+    .then((bar) => {
+      if(!bar) return res.notFound();
+
+      res.json(bar);
+    })
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   createReview: createReviewRoute,
   deleteReview: deleteReviewRoute,
-  addScreening: addScreeningRoute
+  addScreening: addScreeningRoute,
+  getBarInfo: getBarInfoRoute
 };

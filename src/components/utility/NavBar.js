@@ -16,7 +16,7 @@ const NavBar = ({ history, toggleBurger, showBurger }) => {
   if (Auth.getPayload()) type = Auth.getPayload().type;
 
   return(
-    <nav className="navbar">
+    <nav className={`navbar ${(history.location.pathname === '/' ? 'is-transparent' : '')}`}>
       <div className="navbar-brand">
         <Link to="/" className="navbar-item"><h1>awayGame</h1></Link>
         <div className={`${(showBurger ? 'is-active' : '')} navbar-burger burger`} data-target="nav-menu" onClick={toggleBurger}>

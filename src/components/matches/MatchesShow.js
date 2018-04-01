@@ -61,19 +61,19 @@ class MatchesShow extends React.Component {
   componentWillMount() {
     Axios
       .get(`/api/matches/${this.props.match.params.matchCode}`)
-      .then(res => this.setState({ match: res.data }), () => {
-        console.log('reached', this.state);
-      })
+      .then(res => this.setState({ match: res.data }, () => {
+        console.log('match id: ', this.state.match._id);
+      }))
       .catch(err => console.log(err));
 
     if (Auth.isAuthenticated()) {
       if (Auth.isBar()) {
 
         Axios
-          .get(`/api/bars/${Auth.getPayload().barId}`)
-          .then(res => this.setState({ bar: res.data }), () => {
-            console.log('reached', this.state);
-          })
+          .get(`/api/getbarinfo/${Auth.getPayload().barId}`)
+          .then(res => this.setState({ bar: res.data }, () => {
+            console.log('fixtures: ', this.state.bar.fixtures);
+          }))
           .catch(err => console.log(err));
       }
     }
@@ -91,7 +91,7 @@ class MatchesShow extends React.Component {
         </div>
         <div className="row">
           <div className="buttons-bar">
-            { this.state.bar.name && <div>
+            { this.state.bar.fixtures && this.state.match._id && <div>
               { this.hasFixture() &&
                 <button onClick={this.addFixture}>Remove screening from {this.state.bar.name}</button>
               }
