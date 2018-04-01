@@ -17,6 +17,7 @@ $background: white;
 $family-primary: 'Source Sans Pro Extra-Light', sans-serif;
 $family-secondary: 'Open Sans', sans-serif;
 $main-width: 900px;
+$login-form-width: 400px;
 
 // 5. Add new color variables to the color map.
 // @import "bulma/utilities/derived-variables.sass";
@@ -35,6 +36,7 @@ $main-width: 900px;
 @import "matchGrid";
 @import "barCard";
 @import "barShow";
+@import "authentication";
 
 // .google-map {
 //   border-radius: 3px;

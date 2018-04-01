@@ -1,0 +1,29 @@
+
+
+
+div {
+  &.user-login {
+    form {
+      &.login-form {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: $login-form-width;
+        .input {
+          margin-top: 5px;
+        }
+      }
+      button {
+        &.login-button {
+          margin-top: 5px;
+          width: $login-form-width;
+        }
+      }
+    }
+    .bar-link {
+      display: block;
+      margin: 0 auto;
+      margin-top: 5px;
+      width: $login-form-width;
+    }
+  }
+}

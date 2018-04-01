@@ -34,13 +34,23 @@ class UserLogin extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="user-login">
+        <div className="row">
+          <div className="index-info">
+
+          </div>
+        </div>
+        <div className="row">
+          <div className="index-bar">
+
+          </div>
+        </div>
         <UserLoginForm
           user={this.state.user}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Link to="/barregister" className="">I am a bar</Link>
+        <Link to="/barregister" className="button is-outlined bar-link">I am a bar</Link>
       </div>
     );
   }
