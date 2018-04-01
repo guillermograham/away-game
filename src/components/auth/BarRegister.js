@@ -11,7 +11,15 @@ class BarRegister extends React.Component {
       name: '',
       email: '',
       password: '',
-      passwordConfirmation: ''
+      passwordConfirmation: '',
+      addressLine1: '',
+      city: '',
+      postcode: '',
+      location: {
+        lat: '',
+        lng: ''
+      },
+      description: ''
     }
   };
 
@@ -22,13 +30,25 @@ class BarRegister extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    Axios
-      .post('/api/bars', this.state.bar)
+
+    const str = `${this.state.bar.addressLine1} ${this.state.bar.postcode}`;
+    const replaced = str.split(' ').join('+');
+
+    Axios({
+      method: 'GET',
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${replaced}&key=AIzaSyD1mbsdVHA4ozkBwbmEugzszF6CucFZ3WA`,
+      skipAuthorization: true
+    })
       .then((res) => {
-        console.log(res);
-        this.props.history.push('/barlogin');
+        const bar = Object.assign({}, this.state.bar, { location: res.data.results[0].geometry.location });
+        this.setState({ bar });
       })
-      .catch(err => console.log(err));
+      .then(() => {
+        Axios
+          .post('/api/bars', this.state.bar)
+          .then(() => this.props.history.push('/barlogin'))
+          .catch(err => console.log(err));
+      });
   }
 
   render() {

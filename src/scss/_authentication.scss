@@ -1,4 +1,4 @@
-
+//UserLogin
 div {
   &.user-login {
     form {
@@ -28,12 +28,12 @@ div {
 
 @media only screen and (max-width: 640px) {
 
+  //UserLogin
   div {
     &.user-login {
       form {
         &.login-form {
-          margin: 0 auto;
-          margin-top: 50px;
+          margin-top: 30px;
           width: 250px;
           .input {
             margin-top: 5px;
@@ -47,8 +47,6 @@ div {
         }
       }
       .bar-link {
-        display: block;
-        margin: 0 auto;
         margin-top: 5px;
         width: 250px;
       }
