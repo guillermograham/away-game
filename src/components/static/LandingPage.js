@@ -12,8 +12,8 @@ class LandingPage extends React.Component {
   render() {
     return(
       <div className="landing-page">
-        <h2 className="banner-text">Never miss a match.</h2>
-        <div className="front-links-container">
+        <h2 className="banner-text">Never miss a match.<br/><span className="under-text">Find the best bars in Barcelona showing English Premiership games.</span></h2>
+        {/* <div className="front-links-container">
           <div>
             <h3>Find the best bars.</h3>
           </div>
@@ -23,7 +23,7 @@ class LandingPage extends React.Component {
         </div>
         {!Auth.isAuthenticated() && <div>
           <Link to="/barregister">Register your bar.</Link>
-        </div>}
+        </div>} */}
       </div>
     );
   }

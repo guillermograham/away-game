@@ -9,7 +9,8 @@ import Auth from '../../lib/Auth';
 
 class BarsShow extends React.Component {
   state = {
-    bar: {}
+    bar: {},
+    now: new Date()
   }
 
   componentWillMount() {
@@ -29,6 +30,13 @@ class BarsShow extends React.Component {
         })
       .then(() => this.props.history.push('/'))
       .catch(err => console.log(err));
+  }
+
+  hasExpired = (matchDateString) => {
+    const matchDate = new Date(matchDateString);
+    const now = new Date();
+    console.log(matchDate, now);
+    return !!(matchDate < now);
   }
 
   render() {
@@ -82,8 +90,8 @@ class BarsShow extends React.Component {
                   return(
                     <div
                       key={fixture._id}
-                      className="card match-card"
                     >
+                      {!this.hasExpired(fixture.date) && <div className="card match-card">
                       <div className="match-info">
                         <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
                         <Moment format="MMM Do HH:mm" className="date-time">{fixture.date}</Moment>
@@ -93,9 +101,11 @@ class BarsShow extends React.Component {
                         <p className="versus">vs</p>
                         <p className="team-name">{fixture.teams[1]}</p>
                       </div>
+                                             <Link to={`/matches/${fixture.matchCode}`} className="match-info-button">View match details</Link>
+                    </div>}
 
 
-                      <Link to={`/matches/${fixture.matchCode}`} className="match-info-button">View match details</Link>
+
                     </div>
                   );
                 })}
