@@ -1,9 +1,9 @@
 div {
   &.index-map {
-    height: 60vh;
+    height: 50vh;
     margin: auto;
     margin-top: 30px;
-    width: $main-width;
+    width: 600px;
   }
 }
 
@@ -20,6 +20,30 @@ div {
 
 .title {
   text-align: center;
+}
+
+div {
+  &.row {
+    .index-info {
+      background-color: $bright;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: $family-secondary;
+      font-weight: bold;
+      height: 50px;
+      text-align: center;
+    }
+    .index-bar {
+      background-color: $sub-grey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 10px;
+    }
+  }
 }
 
 #scrollButton {

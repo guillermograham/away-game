@@ -56,6 +56,16 @@ class MatchesIndex extends React.Component {
   render() {
     return(
       <div>
+        <div className="row">
+          <div className="index-info">
+
+          </div>
+        </div>
+        <div className="row">
+          <div className="index-bar">
+
+          </div>
+        </div>
         {this.state.matches &&
           <div className="match-grid">
             { this.state.matches.map((match, i) => {

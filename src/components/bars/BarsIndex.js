@@ -67,12 +67,12 @@ class BarsIndex extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="bar-info">
+          <div className="index-info">
 
           </div>
         </div>
         <div className="row">
-          <div className="buttons-bar">
+          <div className="index-bar">
 
           </div>
         </div>

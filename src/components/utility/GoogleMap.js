@@ -9,8 +9,8 @@ class GoogleMap extends React.Component {
 
   componentDidMount() {
     this.map = new google.maps.Map(this.mapCanvas, {
-      center: this.props.center || { lat: 41.390205, lng: 2.154007 },
-      zoom: 15,
+      center: this.props.center || { lat: 41.382205, lng: 2.172007 },
+      zoom: 14,
       clickableIcons: false,
       disableDefaultUI: true
       // styles: mapStyles
