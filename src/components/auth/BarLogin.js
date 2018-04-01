@@ -33,7 +33,17 @@ class BarLogin extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="user-login">
+        <div className="row">
+          <div className="index-info">
+
+          </div>
+        </div>
+        <div className="row">
+          <div className="index-bar">
+
+          </div>
+        </div>
         <UserLoginForm
           user={this.state.user}
           handleChange={this.handleChange}
