@@ -31,7 +31,18 @@ div {
   p {
     &.already-registered {
       margin: 0 auto;
+      text-align: center;
       width: $main-width;
+    }
+  }
+  form {
+    &.bar-register-form {
+      margin: 0 auto;
+      margin-top: 50px;
+      width: $login-form-width;
+      .input {
+        margin-top: 5px;
+      }
     }
   }
 }
