@@ -26,6 +26,16 @@ div {
   }
 }
 
+//BarRegister
+div {
+  p {
+    &.already-registered {
+      margin: 0 auto;
+      width: $main-width;
+    }
+  }
+}
+
 @media only screen and (max-width: 640px) {
 
   //UserLogin

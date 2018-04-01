@@ -53,8 +53,18 @@ class BarRegister extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <p>Already have an account? Sign in <Link to="/barlogin">here</Link></p>
+      <div>
+        <div className="row">
+          <div className="index-info">
+
+          </div>
+        </div>
+        <div className="row">
+          <div className="index-bar">
+
+          </div>
+        </div>
+        <p className="already-registered">Already registered your bar? Sign in <Link to="/barlogin">here</Link></p>
         <BarRegisterForm
           bar={this.state.bar}
           handleChange={this.handleChange}
