@@ -84,7 +84,7 @@ const BarRegisterForm = ({ handleChange, handleSubmit, bar }) => {
         />
       </div>
 
-      <button className="main-button">Register</button>
+      <button className="button is-primary login-button">Register</button>
     </form>
   );
 };

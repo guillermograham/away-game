@@ -31,6 +31,7 @@ div {
   p {
     &.already-registered {
       margin: 0 auto;
+      margin-top: 20px;
       text-align: center;
       width: $main-width;
     }
@@ -38,10 +39,16 @@ div {
   form {
     &.bar-register-form {
       margin: 0 auto;
-      margin-top: 50px;
+      margin-top: 30px;
       width: $login-form-width;
       .input {
         margin-top: 5px;
+      }
+    }
+    button {
+      &.login-button {
+        margin-top: 5px;
+        width: $login-form-width;
       }
     }
   }
