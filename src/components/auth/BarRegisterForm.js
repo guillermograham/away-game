@@ -74,14 +74,16 @@ const BarRegisterForm = ({ handleChange, handleSubmit, bar }) => {
         />
       </div>
       <div className="form-group">
-        <input
+        <textarea
           type="text"
           name="description"
-          placeholder="Description"
+          placeholder="Enter a brief description of your bar"
+          rows="3"
           onChange={handleChange}
           value={bar.description}
-          className="input"
-        />
+          className="textarea"
+        >
+        </textarea>
       </div>
 
       <button className="button is-primary login-button">Register</button>

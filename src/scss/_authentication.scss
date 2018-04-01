@@ -33,7 +33,7 @@ div {
       margin: 0 auto;
       margin-top: 20px;
       text-align: center;
-      width: $main-width;
+      width: $login-form-width;
     }
   }
   form {
@@ -42,6 +42,9 @@ div {
       margin-top: 30px;
       width: $login-form-width;
       .input {
+        margin-top: 5px;
+      }
+      .textarea {
         margin-top: 5px;
       }
     }
@@ -80,4 +83,36 @@ div {
       }
     }
   }
+
+  //BarRegister
+  div {
+    p {
+      &.already-registered {
+        font-size: 10px;
+        margin-top: 5px;
+        width: 250px;
+      }
+    }
+    form {
+      &.bar-register-form {
+        margin-top: 10px;
+        width: 250px;
+        .input {
+          margin-top: 3px;
+        }
+        .textarea {
+          margin-top: 3px;
+        }
+      }
+      button {
+        &.login-button {
+          margin-top: 3px;
+          width: 250px;
+        }
+      }
+    }
+  }
+
+
+
 }
