@@ -85,7 +85,6 @@ const BarRegisterForm = ({ handleChange, handleSubmit, bar }) => {
         >
         </textarea>
       </div>
-
       <button className="button is-primary login-button">Register</button>
     </form>
   );

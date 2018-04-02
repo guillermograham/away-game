@@ -35,14 +35,10 @@ class BarLogin extends React.Component {
     return (
       <div className="user-login">
         <div className="row">
-          <div className="index-info">
-
-          </div>
+          <div className="index-info"></div>
         </div>
         <div className="row">
-          <div className="index-bar">
-
-          </div>
+          <div className="index-bar"></div>
         </div>
         <UserLoginForm
           user={this.state.user}

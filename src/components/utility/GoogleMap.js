@@ -3,8 +3,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-// import mapStyles from '../config/mapStyles';
-
 class GoogleMap extends React.Component {
 
   componentDidMount() {
@@ -13,7 +11,6 @@ class GoogleMap extends React.Component {
       zoom: 14,
       clickableIcons: false,
       disableDefaultUI: true
-      // styles: mapStyles
     });
 
     console.log('before map: ', this.props.bars);
@@ -21,7 +18,7 @@ class GoogleMap extends React.Component {
     if(this.props.bars){
       this.props.bars.forEach((bar) => {
         console.log('bar :', bar);
-        // console.log('in here', bar.address);
+
         const marker = new google.maps.Marker({
           map: this.map,
           position: bar.location,
@@ -52,7 +49,6 @@ class GoogleMap extends React.Component {
         zoom: 18,
         clickableIcons: false,
         disableDefaultUI: true
-        // styles: mapStyles
       });
 
       this.marker = new google.maps.Marker({
@@ -61,30 +57,6 @@ class GoogleMap extends React.Component {
         animation: google.maps.Animation.DROP
       });
     }
-
-
-    // this.markers = this.props.markers.map(bar => {
-    //
-    //   console.log('markers: ', bar);
-    //
-    //   this.markers.bar = new google.maps.Marker({
-    //     map: this.map,
-    //     position: bar.location,
-    //     animation: google.maps.Animation.DROP
-    //   });
-    //
-    //   this.markers.bar.infowindow = new google.maps.InfoWindow({
-    //     content: bar.name
-    //   });
-    //
-    //   this.markers.bar.addListener('click', function() {
-    //     this.markers.bar.infowindow.open(this.map, this.markers.bar);
-    //   });
-    //
-    // });
-
-
-
   }
 
   componentWillUnmount() {

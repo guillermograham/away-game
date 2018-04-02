@@ -1,8 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
 
-import Auth from '../../lib/Auth';
 import GoogleMap from '../utility/GoogleMap';
 import BarCard from './BarCard';
 

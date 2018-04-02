@@ -7,21 +7,21 @@ const match = require('../controllers/match');
 // const secureRoute = require('../lib/secureRoute');
 
 router.route('/bars')
-  .get(bar.index) // tested
-  .post(auth.barRegister); // tested
+  .get(bar.index)
+  .post(auth.barRegister);
 
 router.route('/bars/:id')
-  .get(bar.show)  // tested
-  .put(bar.update); // tested
+  .get(bar.show)
+  .put(bar.update);
 
 router.route('/bars/:id/reviews')
-  .post(bar.createReview); // tested
+  .post(bar.createReview);
 
 router.route('/bars/:id/reviews/:reviewId')
-  .delete(bar.deleteReview); // tested
+  .delete(bar.deleteReview);
 
 router.route('/matches')
-  .get(match.index) // matches
+  .get(match.index)
   .post(match.new);
 
 router.route('/matches/:matchCode')
@@ -37,13 +37,13 @@ router.route('/getbarinfo/:id')
   .get(bar.getBarInfo);
 
 router.route('/register')
-  .post(auth.userRegister); // tested
+  .post(auth.userRegister);
 
 router.route('/login')
-  .post(auth.userLogin); // tested
+  .post(auth.userLogin);
 
 router.route('/barlogin')
-  .post(auth.barLogin); // tested
+  .post(auth.barLogin);
 
 router.all('/*', (req, res) => res.notFound());
 

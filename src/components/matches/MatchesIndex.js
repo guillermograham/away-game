@@ -1,7 +1,5 @@
 import React from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
-import Moment from 'react-moment';
 
 import MatchCard from './MatchCard';
 
@@ -57,14 +55,10 @@ class MatchesIndex extends React.Component {
     return(
       <div>
         <div className="row">
-          <div className="index-info">
-
-          </div>
+          <div className="index-info"></div>
         </div>
         <div className="row">
-          <div className="index-bar">
-
-          </div>
+          <div className="index-bar"></div>
         </div>
         {this.state.matches &&
           <div className="match-grid">
@@ -77,24 +71,7 @@ class MatchesIndex extends React.Component {
                       addMatch={this.addMatch}
                       matchExists={this.matchExists}
                     />
-                  // <div className="card">
-                  //   <p>{match.homeTeamName}</p>
-                  //   <p>{match.awayTeamName}</p>
-                  //   <p>{match._links.self.href.slice(41, 47)}</p>
-                  //   <Moment format="DD/MM/YYYY HH:mm">{match.date}</Moment>
-                  //   { !this.matchExists(match._links.self.href) && <div>
-                  //     <button
-                  //       onClick={() => this.addMatch(match.homeTeamName, match.awayTeamName, match._links.self.href, match.date)}
-                  //     >
-                  //       Add match
-                  //     </button>
-                  //   </div>}
-                  //   { this.matchExists(match._links.self.href) && <div>
-                  //     <Link to={`/matches/${match._links.self.href.slice(41, 47)}`}>View match details</Link>
-                  //   </div>}
-                  // </div>
                   }
-
                 </div>
               );
             })}

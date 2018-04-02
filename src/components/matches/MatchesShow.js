@@ -27,15 +27,10 @@ class MatchesShow extends React.Component {
       .post('/api/addscreening', this.state)
       .then(res => {
         if (this.addOrRemoveFixture(res.data)) {
-          console.log('add');
-
           const newScreenings = this.state.match.screenings.slice();
           newScreenings.push(res.data);
           match = Object.assign({}, this.state.match, { screenings: newScreenings });
-
         } else {
-          console.log('remove');
-
           const newScreenings = this.state.match.screenings.slice();
           const index = newScreenings.indexOf(res.data._id);
           newScreenings.splice(index, 1);
@@ -112,12 +107,6 @@ class MatchesShow extends React.Component {
         </div>}
         {this.state.match.screenings.length === 0 &&
         <p className="message">There are currently no bars showing this match.</p>}
-        {/* { this.state.match.screenings && this.state.match.screenings.map((bar) =>
-          <BarCard
-            key={bar._id}
-            bar={bar}
-          />
-        )} */}
       </div>
     );
   }

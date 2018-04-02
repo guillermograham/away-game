@@ -25,7 +25,6 @@ class UserRegister extends React.Component {
     Axios
       .post('/api/register', this.state.user)
       .then((res) => {
-        console.log(res);
         this.props.history.push('/login');
       })
       .catch(err => console.log(err));
@@ -35,14 +34,10 @@ class UserRegister extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="index-info">
-
-          </div>
+          <div className="index-info"></div>
         </div>
         <div className="row">
-          <div className="index-bar">
-
-          </div>
+          <div className="index-bar"></div>
         </div>
         <UserRegisterForm
           user={this.state.user}

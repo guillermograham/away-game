@@ -5,15 +5,11 @@ import Auth from '../../lib/Auth';
 
 const NavBar = ({ history, toggleBurger, showBurger }) => {
 
-  // could define this in app and pass down via props
   function logout(e) {
     e.preventDefault();
     Auth.logout();
     history.push('/');
   }
-
-  let type = null;
-  if (Auth.getPayload()) type = Auth.getPayload().type;
 
   return(
     <nav className={`${(history.location.pathname === '/' ? 'is-transparent' : '')} navbar`}>

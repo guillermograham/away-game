@@ -55,14 +55,10 @@ class BarRegister extends React.Component {
     return (
       <div>
         <div className="row">
-          <div className="index-info">
-
-          </div>
+          <div className="index-info"></div>
         </div>
         <div className="row">
-          <div className="index-bar">
-
-          </div>
+          <div className="index-bar"></div>
         </div>
         <p className="already-registered">Already registered your bar? Sign in <Link to="/barlogin">here</Link></p>
         <BarRegisterForm

@@ -1,7 +1,6 @@
 /* global google */
 
 import React from 'react';
-// import mapStyles from '../config/mapStyles';
 
 class IndividualGoogleMap extends React.Component {
 
@@ -11,7 +10,6 @@ class IndividualGoogleMap extends React.Component {
       zoom: 18,
       clickableIcons: false,
       disableDefaultUI: true
-      // styles: mapStyles
     });
 
     this.marker = new google.maps.Marker({

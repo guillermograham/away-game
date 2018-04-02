@@ -43,7 +43,6 @@ const UserRegisterForm = ({ handleChange, handleSubmit, user }) => {
           className="input"
         />
       </div>
-
       <button className="button is-primary login-button">Register</button>
     </form>
   );

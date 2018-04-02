@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Moment from 'react-moment';
 
-// import BackButton from '../utility/BackButton';
 import IndividualGoogleMap from '../utility/IndividualGoogleMap';
 import Auth from '../../lib/Auth';
 
@@ -35,7 +34,6 @@ class BarsShow extends React.Component {
   hasExpired = (matchDateString) => {
     const matchDate = new Date(matchDateString);
     const now = new Date();
-    console.log(matchDate, now);
     return !!(matchDate < now);
   }
 
@@ -50,21 +48,9 @@ class BarsShow extends React.Component {
             <p className="page-info">{this.state.bar.postcode}</p>
           </div>
           <div className="buttons-bar">
-            {/* <BackButton history={this.props.history} /> */}
-
             {Auth.isAuthenticated() && Auth.isBar() && `${Auth.getPayload().barId}` === this.state.bar._id && <Link to={`/bars/${this.state.bar._id}/edit`} className="standard-button">
               Edit
             </Link> }
-
-
-
-            {/* { `${Auth.getPayload().userId}` === this.state.bar.createdBy && <Link to={`/bars/${this.state.bar.id}/edit`} className="standard-button">
-              Edit
-            </Link> }
-            {' '}
-            { Auth.isAuthenticated() === this.state.bar.createdBy && <button className="main-button" onClick={this.deleteBar}>
-              Delete
-            </button> } */}
           </div>
         </div>
         <div className="container show-container">
@@ -92,20 +78,17 @@ class BarsShow extends React.Component {
                       key={fixture._id}
                     >
                       {!this.hasExpired(fixture.date) && <div className="card match-card">
-                      <div className="match-info">
-                        <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
-                        <Moment format="MMM Do HH:mm" className="date-time">{fixture.date}</Moment>
-                      </div>
-                      <div className="team-section">
-                        <p className="team-name">{fixture.teams[0]}</p>
-                        <p className="versus">vs</p>
-                        <p className="team-name">{fixture.teams[1]}</p>
-                      </div>
-                                             <Link to={`/matches/${fixture.matchCode}`} className="match-info-button">View match details</Link>
-                    </div>}
-
-
-
+                        <div className="match-info">
+                          <p className="competition-name"><i className="fas fa-futbol"></i> Premier League</p>
+                          <Moment format="MMM Do HH:mm" className="date-time">{fixture.date}</Moment>
+                        </div>
+                        <div className="team-section">
+                          <p className="team-name">{fixture.teams[0]}</p>
+                          <p className="versus">vs</p>
+                          <p className="team-name">{fixture.teams[1]}</p>
+                        </div>
+                        <Link to={`/matches/${fixture.matchCode}`} className="match-info-button">View match details</Link>
+                      </div>}
                     </div>
                   );
                 })}
