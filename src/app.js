@@ -2,7 +2,7 @@ import React    from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Navbar           from './components/utility/Navbar';
+import Navbar           from './components/utility/NavBar';
 import UserLogin        from './components/auth/UserLogin';
 import UserRegister     from './components/auth/UserRegister';
 import BarLogin         from './components/auth/BarLogin';
