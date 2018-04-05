@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build && node index",
-    "build": "yarn install && webpack -p",
+    "build": "webpack -p",
     "seed": "node db/seeds",
     "start:client": "webpack-dev-server",
     "test:client": "nyc --reporter=text --reporter=html mocha test/client/helper.js \"test/client/**/*.js\" --exit",
