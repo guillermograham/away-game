@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn build && node index",
-    "build": "webpack -p",
+    "build": "yarn install && webpack -p",
     "seed": "node db/seeds",
     "start:client": "webpack-dev-server",
     "test:client": "nyc --reporter=text --reporter=html mocha test/client/helper.js \"test/client/**/*.js\" --exit",
@@ -55,7 +55,6 @@
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^3.3.0",
-    "webpack-cli": "^2.0.13",
     "webpack-dev-server": "^2.5.1"
   }
 }
